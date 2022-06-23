@@ -1,0 +1,5 @@
+<view class="page">
+  <view class="title">如何体验</view>
+  <view class="info">已自动创建名为“sales”的体验合集，可打开“云开发控制台>数据库>记录列表”中找到该集合。</view>
+  <image class="img" src="../../images/database.png"></image>
+</view>

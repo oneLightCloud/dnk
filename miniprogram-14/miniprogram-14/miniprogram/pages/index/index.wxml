@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="map_container">
+ <view>    实时位置：</view>
+  <view>{{location}}</view>
+  
+    <view>{{temp}}</view>
+    <view>{{tianqi}}</view>
+  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
+    <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
+      <view class="power_info_text">
+        <view class="power_info_text_title">{{power.title}}</view>
+        <view class="power_info_text_tip">{{power.tip}}</view>
+      </view>
+      <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
+      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image>
+    </view>
+    <view wx:if="{{power.showItem}}">
+      <view wx:key="title" wx:for="{{power.item}}">
+        <view class="line"></view>
+        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
+          <view class="power_item_title">{{item.title}}</view>
+          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+  
+<map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" shoe-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
+</view>
+<view class="place_info">
+<test>{{placeData.title}}</test>
+<test>{{placeData.address}}</test>
+<test>{{placeData.telephone}}</test>
+</view>
+</view>
