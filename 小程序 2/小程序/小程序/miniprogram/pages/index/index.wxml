@@ -1,0 +1,23 @@
+<!--pages/index/index.wxml-->
+<view  class= "content">
+    
+     <view style="flex:1;width:100%">
+
+       <label class="xia">
+       <text class="zm1">当前温度：{{wendu}}°C</text>
+       </label>
+
+     </view>
+     
+     <view style="flex:1;width:100%">
+     <label class="xia">
+      <text class="zm1">当前湿度：{{shidu}} %</text>
+     </label>
+     </view>
+     <button class="login-btn" bindtap="points" >显示温湿度</button>   
+  </view>
+
+
+
+
+
